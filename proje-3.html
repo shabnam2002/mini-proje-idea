@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/91031c70f9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <style>
+        body{
+            margin: 0;
+            background-color: rgb(51, 22, 78);
+        }
+        label{
+            position: absolute;
+            z-index: 1;
+        }
+        input#menub{
+            display: none;
+        }
+           
+        input#menub:checked ~ label{
+
+          right:0;
+        }
+.burger{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5 ease-in;
+  font-size: 50px;
+}
+i.close{
+ font-size: 50px;
+color: rgb(255, 225, 0);
+cursor: pointer;
+position: absolute;
+top: 24px;
+opacity: 0;
+}
+i.close line{
+  transform-origin: 0%;
+}
+i.close g{
+  transform: rotate(45deg);
+  transform-origin: 50%;
+}
+input#menub:checked ~ lable i.burger{
+  opacity: 0;
+}
+input#menub:checked ~ lable i.close{
+  opacity: 1;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+padding: 50px;
+background-color: tomato;
+transition: all 0.5s cubic-bezier(.17,.88,.32,1.25);
+color: aliceblue;
+font-size: 24px;
+font-weight: bold ;
+}
+menu div {
+  margin-top: 50px;
+  transition: all 0.5s cubic-bezier(.17,.88,.32,1.25);
+
+}
+.main{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+#menub:checked ~ .menu div {
+  margin: 0;
+
+}
+    </style>
+  </head>
+  <body>
+<input id="menub" type="checkbox">
+<label for="menub">
+<i class="fa-solid fa-bars burger">
+  <g stroke-width="12">
+    <line x1="6" y1="6" x2="80" y2="6"></line>
+        <line x1="6" y1="28" x2="80" y2="28"></line>
+    <line x1="6" y1="50" x2="80" y2="50"></line>
+
+  </g>
+</i>
+    <i  class="fa-solid fa-circle-xmark   close">
+        <g stroke-width="12">
+    <line x1="42" y1="6" x2="42" y2="80"></line>
+        <line x1="6" y1="42" x2="80" y2="42"></line>
+
+  </g>
+    </i>
+  </label>
+<div class="menu">
+    <div>خانه</div>
+      <div>دوره های آموزشی</div>
+        <div>درباره ما</div>
+          <div>تماس با ما</div>
+</div>
+
+<span  class="main">
+    دوره متخصص طراحی وب
+</span>
+
+
+
+
+
+  </body>
+</html>

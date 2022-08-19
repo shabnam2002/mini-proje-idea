@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script
+      src="https://kit.fontawesome.com/91031c70f9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.btn{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: 100px;
+min-width: 200px;
+padding: 10px;
+border: 0;
+background-color: rgb(72, 72, 225);
+color: aliceblue;
+border-radius: 4px;
+/* overflow: hidden; */
+font-size: 15px;
+cursor: pointer;
+position: relative;
+}
+ul li{
+    color: black;
+}
+.btn i{
+    border-radius: 100%;
+    animation: ripple 0.8s linear infinite;
+}
+@keyframes ripple{
+    0%{
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .1) , 0 0 0 20px rgba(255 , 255 , 255 ,.1), 0 0 0 40px rgba(255 , 255 , 255 ,.1) ,  0 0 0 60px rgba(255 , 255 , 255 ,.1)  ;
+    }
+     100%{
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, .1) , 0 0 0 40px rgba(255 , 255 , 255 ,0.1), 0 0 0 60px rgba(255 , 255 , 255 ,0.1) ,  0 0 0 80px rgba(255 , 255 , 255 ,0)  ;
+    }
+    
+}
+.drop-down{
+    position: absolute;
+    margin-top: 20px;
+    top: 100%;
+    left: 0;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 0px 1px 10px rgb(228 227 227);
+        padding: 20px 10px;
+        transition:  .3s ease;
+        width: 100%;
+opacity: 0;;
+}
+.drop-down li {
+    color: gray;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.071);
+            padding: 10px 0;
+            text-align: right;
+
+}
+.drop-down a.active{
+    color: rgb(66, 66, 240);
+}
+ul.drop-down li:first-child{
+    border-radius: 4px 4px 0 0 ;
+}
+ul.drop-down li:last-child {
+    border-radius:0 0 4px 4px ;
+    border-bottom: 0;
+}
+ul.drop-down::before{
+    content: "";
+    
+    position: absolute;
+    top: -5px;
+    left: 10px;
+        box-shadow: 0px 0px 10px rgba(228, 227, 227, 0.354);
+
+    border-top: 10px solid  rgb(255, 255, 255);
+        border-right: 10px solid  rgb(255, 255, 255);
+        transform: rotate(-50deg);
+
+}
+.btn:focus ul.drop-down , .btn:active ul.drop-down {
+opacity:1 ;
+transform: translateY(20px);}
+    </style>
+</head>
+<body>
+  <div class="container">
+      <button class="btn">
+               <i class="fa-solid fa-earth-americas"></i>
+
+          <span>حساب کاربری شما</span>
+             <ul class="drop-down">
+          <li> <a href="" class="active">پروفایل</a></li>
+          <li>دوره های من </li>
+          <li>کیف پول</li>
+          <li>خروج</li>
+      </ul>
+      </button>
+   
+  </div>
+</body>
+</html>
