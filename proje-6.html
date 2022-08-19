@@ -6,8 +6,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style1.css">
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+
+        }
+        main{
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .aside-section{
+position: absolute;
+top: 0;
+bottom: 0;
+        }
+        .aside-left{
+            width: 40%;
+            /* position: relative; */
+            left: 0;
+            background-color: palevioletred;
+            transform: translateY(-100%);
+            transition:  all .4s ease-in-out;
+        
+        }
+        .aside-right{
+            width:60%;
+            right: 0;
+            background-color: coral;
+            transform: translateX(-100%);
+            transition:transform 0.6s ease-in-out;
+
+        }
+        .aside-right .aside-list{
+            padding: 0;
+            margin: 0;
+            text-align: right;
+            padding: 50px;
+            font-size: 20px;
+        }
+         .aside-right .aside-list li a{
+             color: aliceblue;
+             margin-bottom: 30px;
+             position: relative;
+             padding-bottom: 7px;
+         }
+              .aside-right .aside-list li {
+             margin-bottom: 30px;
+         }
+         .aside-right .aside-list  a.aside-ancher::before{
+             content: ' ';
+             position: absolute;
+             height: 3px;
+             width: 50%;
+background-color: rgb(255, 255, 255);        
+     z-index:1 ;
+             left: 0;
+             bottom: 0;
+             transition: transform .3s ease-in-out;
+         }
+                  .aside-right .aside-list  a.aside-ancher::after{
+            content: ' ';
+             position: absolute;
+             height: 3px;
+             width: 100%;
+background-color: rgb(112, 18, 18);        
+             bottom: 0;
+             right: 0;
+             transition: transform .3s ease-in-out;
+         }
+         .aside-ancher:hover::before{
+             transform: translateX(100%);
+         }
+         .aside-content p{
+             margin-top: 50px;
+           
+             font-size: 30px;
+         }
+         .button{
+             margin-top: 30px;
+           text-align: center;
+             font-size:20px;
+             padding: 5px 40px;
+             background-color: transparent;
+             display: inline-block;
+             border: 3px solid white;
+             border-radius: 4px;
+             cursor: pointer;
+         }
+         .aside-content{
+            
+             text-align: center;
+         }
+         input#myinput:checked ~  aside  .aside-left{
+            transform: translateY(0%);
+
+         }
+             input#myinput:checked ~  aside  .aside-right{
+            transform: translateX(0%);
+
+
+
+         }
+         #myinput{
+             position: fixed;
+             z-index: 5;
+             display: none;
+         }
+         .bar{
+             width: 30px;
+             height: 1px;
+             background-color: rgb(90, 88, 88);
+display: block;
+padding: 2px;
+margin: 3px 0;
+transition: background-color .4s ease-in , width .4s ease-in , transform  .4s ease-in;
+z-index:8 ;
+
+         }
+         label{
+             position: fixed;
+             left: 15px;
+             top: 20px;
+             z-index: 5;
+         }
+         input#myinput:checked ~ label .bar{
+             background-color: aliceblue;
+         }
+            input#myinput:checked ~ label .top{
+                transform: translateY(0) rotate(45deg);
+            }
+              input#myinput:checked ~ label .bottom{
+                transform: translateY(-11px) rotate(-45deg);
+            }
+    input#myinput:checked ~ label .middle{
+width: 0;
+padding: 0;
+    }
+    @media screen and (max-width:900px){
+          .aside-right {
+              width: 100%;
+          }
+            .aside-left {
+              width: 0%;
+          }
+          
+        
+    }
+    </style>
 </head>
 <body>
-    
+    <input type="checkbox" id="myinput">
+    <label for="myinput">
+            <span class="bar top"></span>
+        <span class="bar middle"></span>
+            <span class="bar bottom"></span>
+    </label>
+    <aside>
+    <div class="aside-section aside-left">
+<div class="aside-content">
+    <p>محتوای سایت</p>
+    <button class="button">بزن بریم</button>
+</div>
+    </div>
+    <div class="aside-section aside-right">
+        <ul class="aside-list">
+            <li><a href="" class="aside-ancher">خانه</a></li>
+            <li><a href="" class="aside-ancher">دوره های آموزشی</a></li>
+            <li><a href="" class="aside-ancher">تماس با ما</a></li>
+            <li><a href="" class="aside-ancher">درباره ما</a></li>
+        </ul>
+    </div>
+    </aside>
 </body>
 </html>
